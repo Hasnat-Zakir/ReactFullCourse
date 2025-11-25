@@ -1,9 +1,5 @@
 import styles from "./item.module.css";
-let Item = ({ foodItem }) => {
-  const handleBuyButtonClicked = (event) => {
-    console.log(event);
-    console.log(`${foodItem} being Bought`);
-  };
+let Item = ({ foodItem, handleBuyButton }) => {
   return (
     <>
       <li className={`${styles.kgItem} list-group`}>
@@ -12,7 +8,7 @@ let Item = ({ foodItem }) => {
           {foodItem}
           <button
             className={`${styles.button} btn btn-info`}
-            onClick={(event) => handleBuyButtonClicked(event)}
+            onClick={handleBuyButton}
           >
             Buy
           </button>
