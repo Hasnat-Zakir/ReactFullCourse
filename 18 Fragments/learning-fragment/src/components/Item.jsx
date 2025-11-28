@@ -1,10 +1,12 @@
 import styles from "./item.module.css";
-let Item = ({ foodItem, handleBuyButton }) => {
+
+let Item = ({ foodItem, bought, handleBuyButton }) => {
   return (
     <>
-      <li className={`${styles.kgItem} list-group`}>
-        <span className={`${styles.kgSpan} list-group-item`}>
-          {" "}
+      <li
+        className={`${styles["kg-item"]} list-group-item ${bought && "active"}`}
+      >
+        <span className={`${styles.kgSpan}`}>
           {foodItem}
           <button
             className={`${styles.button} btn btn-info`}
