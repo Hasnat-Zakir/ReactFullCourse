@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styles from "./AddTodo.module.css";
+import { IoMdAddCircle } from "react-icons/io";
+
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [dueDate, setDueDate] = useState();
+  const [todoName, setTodoName] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
@@ -35,7 +37,7 @@ function AddTodo({ onNewItem }) {
             className={`btn btn-success ${styles.addButton} `}
             onClick={handleAddButtonClicked}
           >
-            Add
+            <IoMdAddCircle />
           </button>
         </div>
       </div>
